@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Ark Xu"]
   s.email       = ["ark.work@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/arkxu/mongoid_order"
   s.summary     = %q{Make Mongoid documents order-able}
   s.description = %q{An easy way to make Mongoid documents order-able by adding position field}
 
