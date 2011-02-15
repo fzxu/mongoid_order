@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "mongoid_order"
-  s.version     = "0.0.1"
+  s.version     = "0.0.2"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Ark Xu"]
   s.email       = ["ark.work@gmail.com"]
