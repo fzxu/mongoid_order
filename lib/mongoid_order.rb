@@ -32,26 +32,26 @@ module Mongoid
     # Returns siblings below the current document.
     # Siblings with a position greater than this documents's position.
     def lower_siblings
-      self.class.all.where(:position.gt => self.position)
+      self.class.where(:position.gt => self.position)
     end
 
     ##
     # Returns siblings above the current document.
     # Siblings with a position lower than this documents's position.
     def higher_siblings
-      self.class.all.where(:position.lt => self.position)
+      self.class.where(:position.lt => self.position)
     end
 
     ##
     # Returns the lowest sibling (could be self)
     def last_sibling_in_list
-      self.class.all.asc(:position).last
+      self.class.asc(:position).last
     end
 
     ##
     # Returns the highest sibling (could be self)
     def first_sibling_in_list
-      self.class.all.asc(:position).first
+      self.class.asc(:position).first
     end
 
     ##
@@ -84,7 +84,7 @@ module Mongoid
     # Move this node one position up
     def move_up
       return if at_top?
-      self.class.all.where(:position => self.position - 1).first.inc(:position, 1)
+      self.class.where(:position => self.position - 1).first.inc(:position, 1)
       inc(:position, -1)
     end
 
@@ -92,7 +92,7 @@ module Mongoid
     # Move this node one position down
     def move_down
       return if at_bottom?
-      self.class.all.where(:position => self.position + 1).first.inc(:position, -1)
+      self.class.where(:position => self.position + 1).first.inc(:position, -1)
       inc(:position, 1)
     end
 
@@ -146,7 +146,7 @@ module Mongoid
         if self.class.all.empty? || self.class.all.collect(&:position).compact.empty?
           self.position = 0
         else
-          self.position = self.class.all.max(:position) + 1
+          self.position = self.class.max(:position) + 1
         end
       end
   end
