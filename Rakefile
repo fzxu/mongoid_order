@@ -20,5 +20,5 @@ end
 
 desc "build the gem and release it to rubygems.org"
 task :release => :gem do
-  sh "gem push pkg/mongoid-order-#{gemspec.version}.gem"
+  sh "gem push pkg/mongoid_order-#{gemspec.version}.gem"
 end
