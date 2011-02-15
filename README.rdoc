@@ -16,7 +16,7 @@ To install mongoid_order, simply add it to your Gemfile:
 
   gem 'mongoid_order'
 
-In order to get the latest development version of mongoid-tree:
+In order to get the latest development version of mongoid_order:
 
   gem 'mongoid_order', :git => 'https://github.com/arkxu/mongoid_order.git'
 
