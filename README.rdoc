@@ -1,0 +1,68 @@
+= mongoid_order
+
+An easy way to make mongoid documentation order-able.
+
+This class is extracted from benedikt's great gem https://github.com/benedikt/mongoid-tree with some modifications. Thanks to benedikt!
+
+
+== Requirements
+
+* mongoid (>= 2.0.0.beta.20)
+
+
+== Install
+
+To install mongoid_order, simply add it to your Gemfile:
+
+  gem 'mongoid_order'
+
+In order to get the latest development version of mongoid-tree:
+
+  gem 'mongoid_order', :git => 'https://github.com/arkxu/mongoid_order.git'
+
+And then:
+  bundle install
+
+
+== Usage
+
+Add the <tt>include Mongoid::Orderable</tt> in the model:
+
+  class Node
+    include Mongoid::Document
+    include Mongoid::Orderable
+  end
+
+
+=== Ordering
+
+This will add a <tt>position</tt> field to your document and provide additional utility methods:
+
+  node.move_up
+  node.move_down
+  node.move_to_top
+  node.move_to_bottom
+  node.move_above(other)
+  node.move_below(other)
+
+  node.at_top?
+  node.at_bottom?
+
+== Known issues
+
+See https://github.com/arkxu/mongoid_order/issues
+
+
+== Repository
+
+See https://github.com/arkxu/mongoid_order and feel free to fork it!
+
+
+== Contributors
+
+See a list of all contributors at https://github.com/arkxu/mongoid_order/contributors. Thanks a lot everyone!
+
+
+== Copyright
+
+Copyright (c) 2011 Ark Xu. See LICENSE for details.
