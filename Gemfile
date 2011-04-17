@@ -4,3 +4,7 @@ source "http://rubygems.org"
 gemspec
 
 gem 'bson_ext', '>= 1.0.4'
+
+if RUBY_VERSION =~ /1\.8/
+  gem 'SystemTimer'
+end

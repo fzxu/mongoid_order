@@ -24,6 +24,8 @@ module Mongoid
     included do
       field :position, :type => Integer
 
+      default_scope asc(:position)
+      
       before_save :assign_default_position
       after_destroy :move_lower_siblings_up
     end
